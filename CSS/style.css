@@ -1,0 +1,43 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Merriweather, serif; 
+}
+.nav{
+    height: 50px;
+    width:100%;
+    background-color:#0FC690 ;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.logo{
+    font-size:45px ;
+    color:white;
+    margin-right: 135px;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+    margin-right: 30px;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.1s ease; /* Transition sur la couleur et le zoom */
+}
+
+a:hover{
+    color: black;
+    
+    transform: scale(1.05); /* Augmente la taille à 120% lors du hover */
+}
+
+#ic1{
+    margin-right: 50px;
+    margin-left: 45px;
+    color:white;
+    font-size: 27px;
+}
