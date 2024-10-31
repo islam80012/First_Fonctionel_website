@@ -1,12 +1,14 @@
-body{
+body {
     padding: 0;
     margin: 0;
-    font-family: Merriweather, serif; 
+    font-family: Merriweather, serif;
 }
-.nav{
+
+/* Base Styling */
+.nav {
     height: 50px;
-    width:100%;
-    background-color:#0FC690 ;
+    width: 100%;
+    background-color: #648089;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -14,30 +16,386 @@ body{
     padding-top: 25px;
     padding-bottom: 25px;
 }
-.logo{
-    font-size:45px ;
-    color:white;
-    margin-right: 135px;
 
+.logo {
+    font-size: 45px;
+    color: white;
+    margin-right: 135px;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
     font-size: 21px;
     margin-right: 30px;
     display: inline-block;
-    transition: color 0.3s ease, transform 0.1s ease; /* Transition sur la couleur et le zoom */
+    transition: color 0.3s ease, transform 0.1s ease;
 }
 
-a:hover{
+a:hover {
     color: black;
-    
-    transform: scale(1.05); /* Augmente la taille à 120% lors du hover */
+    transform: scale(1.05);
 }
 
-#ic1{
+#ic1 {
     margin-right: 50px;
     margin-left: 45px;
-    color:white;
+    color: white;
     font-size: 27px;
 }
+
+/* Responsive Design */
+/* Media Query pour écrans moyens */
+/* Styles de base */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Merriweather, serif;
+}
+
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: #648089;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.logo {
+    font-size: 45px;
+    color: white;
+    margin-right: 135px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+    margin-right: 30px;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.1s ease;
+}
+
+a:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+#ic1 {
+    margin-right: 50px;
+    margin-left: 45px;
+    color: white;
+    font-size: 27px;
+}
+
+/* Accueil */
+.ParentAccueil {
+    position: relative;
+}
+
+.img1 {
+    width: 100%;
+}
+
+.ParentContent {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    position: absolute;
+    top: 150px;
+    width: 750px;
+}
+
+.Basic {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+}
+
+.par {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.ReadBtn {
+    background-color: #2e3f43;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.ReadBtn:hover {
+    background-color: #20282a;
+}
+
+.previous,
+.next {
+    position: absolute;
+    top: 313px;
+    font-size: 55px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 3px;
+    color: #2e3f43;
+}
+
+.previous {
+    left: 130px;
+}
+
+.next {
+    right: 130px;
+}
+
+/* Media Queries */
+
+/* Pour les écrans moyens */
+@media (max-width: 768px) {
+    .nav {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .logo {
+        font-size: 35px;
+        margin-right: 50px;
+    }
+
+    .navitems a {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+    #ic1 {
+        font-size: 22px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .content {
+        top: 100px;
+        width: 90%;
+    }
+
+    .Basic {
+        font-size: 40px;
+    }
+
+    .par {
+        font-size: 18px;
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+    .previous,
+    .next {
+        top: 250px;
+        font-size: 40px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .previous {
+        left: 20px;
+    }
+
+    .next {
+        right: 20px;
+    }
+}
+
+/* Pour les petits écrans */
+@media (max-width: 576px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .logo {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .navitems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navitems a {
+        font-size: 20px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #ic1 {
+        font-size: 24px;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .content {
+        top: 80px;
+        width: 100%;
+    }
+
+    .Basic {
+        font-size: 30px;
+    }
+
+    .par {
+        font-size: 16px;
+        padding: 8px;
+        margin: 10px 0;
+    }
+
+    .previous,
+    .next {
+        display: none; /* Cache les boutons */
+    }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 400px) {
+    .nav {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .logo {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .navitems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navitems a {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    #ic1 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .ParentAccueil {
+        padding: 10px;
+    }
+
+    .Basic {
+        font-size: 25px;
+    }
+
+    .par {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+/* Accuel Page  */
+.ParentAccueil{
+    position: relative;
+}
+.img1{
+    width:100%;
+   
+}
+.ParentContent{
+    display: flex;
+    justify-content: center;
+
+}
+.content{
+    position: absolute;
+    top:150px;
+    width:750px;
+}
+.Basic{
+    color:white;
+    font-size: 60px;
+    text-align: center;
+}
+.par {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6; /* Augmente l'interlignage pour faciliter la lecture */
+    text-align: justify; /* Justifie le texte pour un alignement équilibré */
+    padding: 15px; /* Ajoute un espacement autour du texte */
+    margin: 20px 0; /* Espace le paragraphe par rapport aux autres éléments */
+    background-color: rgba(0, 0, 0, 0.5); /* Ajoute un fond transparent pour plus de contraste */
+    border-radius: 8px; /* Arrondit les coins du fond */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ajoute une ombre subtile pour donner de la profondeur */
+    position: relative;
+    display: inline-block;
+}
+
+.ReadBtn{
+    background-color: #2e3f43;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+.ReadBtn:hover {
+    background-color: #20282a;
+}
+.previous,.next{
+    position: absolute;
+    top: 313px;
+    font-size: 55px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 3px;
+    color: #2e3f43;
+    border: none;
+
+}
+.previous{
+    left:130px;
+}
+.next{
+    right:130px;
+}
+.previous:hover,.next:hover{
+    background-color:#2e3f43 ;
+    color:white;
+}
+
+
+
+
+
