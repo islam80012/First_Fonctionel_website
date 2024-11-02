@@ -26,12 +26,12 @@
         </div>
     </nav>
     <div class="ParentAccueil">
-            <img class="img1" src="../Images/img1.jpg" alt="">
-            <button class="previous"><</button>
+            <img id="img" class="img1" src="../Images/img1.jpg" alt="">
+            <button onclick="slideshowPrev()" class="previous"><</button>
         <div class="ParentContent">
             <div class="content">
-                <div class="Basic">Basic Template</div>  
-                <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <div id="title" class="Basic">Basic Template</div>  
+                <p id="content" class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                      Saepe facere nemo soluta sit dicta dolorem vel pariatur. 
                      Repudiandae praesentium nam incidunt, libero dignissimos
                       voluptatum illo assumenda odio distinctio necessitatibus
@@ -45,7 +45,7 @@
                 
             </div>
         </div>
-        <button class="next">></button>
+        <button onclick="slideshowNext()" class="next">></button>
     </div>
 
     <script src="../Script/script.js"></script>
