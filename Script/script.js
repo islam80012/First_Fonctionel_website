@@ -40,3 +40,48 @@ function slideshowPrev() {
     i = (i - 1 + arraySLide.length) % arraySLide.length; // Decrement and wrap around to last slide
     updateSlide();
 }
+
+
+    var inputName=document.getElementById("name");
+    var inputEmail=document.getElementById("email");
+    var inputPassword=document.getElementById("pw");
+    var errname=document.getElementById("errname");
+    var erremail=document.getElementById("erremail");
+    var errpassw = document.getElementById("errpassw");
+    function ValidateForm(event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+        let isValid = true;
+
+        // Réinitialisation des messages d'erreur
+        errname.textContent = "";
+        erremail.textContent = "";
+        errpassw.textContent = "";
+        inputName.style.border = "";
+        inputEmail.style.border = "";
+        inputPassword.style.border = "";
+
+        if (inputName.value === "" || inputName.value == null) {
+            inputName.style.border = "2px solid red";
+            errname.textContent = "Enter your name!";
+            isValid = false;
+        }
+        
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(inputEmail.value)) {
+            inputEmail.style.border = "2px solid red";
+            erremail.textContent = "Enter a valid email!";
+            isValid = false;
+        }
+        
+        if (inputPassword.value.length <= 6) {
+            inputPassword.style.border = "2px solid red";
+            errpassw.textContent = "Enter a longer password!";
+            isValid = false;
+        }
+
+        // Soumettre le formulaire si tous les champs sont valides
+        if (isValid) {
+            // Optionnel : si le formulaire doit être soumis, activer l'action suivante
+            alert("Formulaire soumis avec succès!");
+        }
+    }

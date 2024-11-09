@@ -99,7 +99,10 @@ a:hover {
 }
 
 .img1 {
-    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .ParentContent {
@@ -370,8 +373,13 @@ a:hover {
     transition: background-color 0.3s ease;
     
 }
-.ReadBtn:hover {
+
+.ReadBtn, .previous, .next {
+    transition: background-color 0.3s, transform 0.3s;
+}
+.ReadBtn:hover, .previous:hover, .next:hover {
     background-color: #20282a;
+    transform: scale(1.1);
 }
 .previous,.next{
     position: absolute;
@@ -399,38 +407,52 @@ a:hover {
 /* GrandParent styling */
 .GrandParent {
     width: 100%;
-    background-color: #1d2b2e;
-    padding: 50px 0; /* Ajout d'un espace autour de la section */
+    background-color: #648089;
+    padding: 0; /* Ajout d'un espace autour de la section */
     margin-top: -4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 
-/* ParentAbout styling */
-.ParentAbout {
+/* ParentAbout styling & Services */
+.ParentAbout,.Services,.ContactUs {
     width: 1150px;
     margin: auto;
     padding: 30px;
-    background-color: #648089;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* background-color: #648089; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    border:none;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+.ParentAbout{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: none;
+    margin:-16px
+}
+.Services{
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: -16px;
+}
 /* Title styling */
-.TitleAbout {
+.TitleAbout,.TitleServices,.TitleContact {
     font-size: 45px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     color: white;
     font-weight: bold;
+    margin-bottom: 20px;
     border-bottom: 2px solid #20282a;
     text-align: center;
 }
 
 /* Paragraph styling */
-.ParAbout {
+.ParAbout,.ParServices {
     font-size: 20px;
     text-align: center;
     color: #ffffff;
@@ -454,53 +476,21 @@ a:hover {
 }
 
 /* Button styling */
-.ReadAbout {
-    background-color: #2e3f43;
-    color: white;
+.ReadAbout,.submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #2d4045;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .ReadAbout:hover {
     background-color: #1d2b2e;
-}
-
-/* Services Section */
-.Services {
-    width: 100%;
-    max-width: 1150px;
-    margin: auto;
-    margin-top: 55px;
-    padding: 40px;
-    background-color: #648089;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.TitleServices {
-    font-size: 45px;
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #2e3f43;
-    text-align: center;
-}
-
-.ParServices {
-    margin-top: 20px;
-    font-size: 20px;
-    text-align: center;
-    color: #ffffff;
-    line-height: 1.6;
-    max-width: 800px;
 }
 
 /* Grid for Images */
@@ -512,6 +502,16 @@ a:hover {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .Grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .Grid {
+        grid-template-columns: 1fr;
+    }
+}
 .GridItem {
     background-color: #8bb7c2;
     padding: 20px;
@@ -538,6 +538,68 @@ a:hover {
     font-weight: bold;
     margin-top: 10px;
 }
+/* Contact us */
+.ContactUs{
+    padding-top:50px
+}
+.Form{
+    width: 750px;
+    background-color: #FFFFFF;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.TitleContact{
+    width:250px;
+    color:#2d4045;
+    margin: 20px auto;
+    border-color: #8bb7c2;
+    font-weight: bold;
+}
+.input, .textarea {
+    width: 153%;
+    margin-left: -72px;
+    padding: 12px 20px;
+    margin-top: 16px;
+    font-size: 20px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+    border-color: #8bb7c2;
+    box-shadow: 0 0 8px rgba(139, 183, 194, 0.5);
+}
+
+.textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+
+.submit:hover {
+    background-color: #8bb7c2;
+    transform: translateY(-2px);
+}
+
+
+.submit:active {
+    transform: scale(0.98);
+}
+.errname,.erremail,.errpassw{
+    color:red;
+
+}
+
+
+
 
 
 
